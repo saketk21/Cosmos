@@ -1,0 +1,28 @@
+.navbar {
+	z-index: 998;
+	position: fixed;
+}
+.brand {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+a.toolbar-nav-link {
+	padding-right: 2rem;
+	text-decoration: none;
+	color: white;
+}
+mat-sidenav-container {
+	height: 100%;
+}
+mat-sidenav, mat-sidenav-content {
+	padding-top: 5rem;
+}
+mat-sidenav {
+	width: 15rem;
+}
+mat-sidenav-content {
+	padding-left: 2em;
+	padding-right: 2em;
+	padding-bottom: 15rem;
+}
