@@ -2,7 +2,7 @@ const mongoose = require( 'mongoose' );
 
 const ExpenseSchema = mongoose.Schema( {
 	title: String,
-	amount: mongoose.Types.Decimal128,
+	amount: Number,
 	category: String
 } );
 
