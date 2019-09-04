@@ -29,12 +29,7 @@ exports.create = ( req, res ) => {
 
 // Retrieve and return all expenses from the database.
 exports.findAll = ( req, res ) => {
-	let queryObj = {};
-	if ( req.query ) {
-		queryObj = {
-			category: req.query.category
-		};
-	}
+	let queryObj = req.query;
 	Expense.find( queryObj )
 		.then( expenses => {
 			res.send( expenses );
