@@ -1,3 +1,8 @@
-<p>
-  expense-analyze works!
-</p>
+<mat-card>
+  <mat-card-title>Expenses by Category</mat-card-title>
+  <mat-card-content>
+    <canvas baseChart [data]="pieChartData" [labels]="pieChartLabels" [chartType]="pieChartType"
+      [options]="pieChartOptions" [colors]="pieChartColors" [legend]="pieChartLegend">
+    </canvas>
+  </mat-card-content>
+</mat-card>

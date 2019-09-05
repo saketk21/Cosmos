@@ -13,6 +13,7 @@ import { ExpenseService } from './expense.service';
 import { HttpClientModule } from '@angular/common/http';
 import { ExpenseFormDialogComponent } from './expense-form-dialog/expense-form-dialog.component';
 import { ExpenseAnalyzeComponent } from './expense-analyze/expense-analyze.component';
+import { ChartsModule } from 'ng2-charts-x';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { ExpenseAnalyzeComponent } from './expense-analyze/expense-analyze.compo
     BrowserAnimationsModule,
     MaterialModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    ChartsModule
   ],
   providers: [
     ExpenseService
