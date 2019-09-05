@@ -1,0 +1,28 @@
+<h3 mat-dialog-title>Add/Edit Expense</h3>
+<mat-dialog-content>
+  <form class="form-container" #expenseForm="ngForm">
+    <mat-form-field>
+      <input matInput placeholder="What did you spend this amount for?" name="title" [(ngModel)]="expenseModel.title"
+        required>
+      <mat-error>Please enter the title of this expense.</mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput type="number" placeholder="How much did you spend?" name="amount"
+        [(ngModel)]="expenseModel.amount" required>
+      <mat-error>Please enter a valid amount.</mat-error>
+    </mat-form-field>
+
+    <mat-form-field required>
+      <mat-select placeholder="Select Category" name="category" [(ngModel)]="expenseModel.category" required>
+        <mat-option *ngFor="let category of categories" value="{{category}}">{{category}}</mat-option>
+      </mat-select>
+      <mat-error>Please select a category.</mat-error>
+    </mat-form-field>
+  </form>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button mat-raised-button color="primary" [disabled]="expenseForm.form.invalid" (click)="save()">
+    Save
+  </button>
+</mat-dialog-actions>

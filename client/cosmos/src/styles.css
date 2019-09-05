@@ -1,19 +1,30 @@
 /* You can add global styles to this file, and also import other style files */
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
 
 .bills {
-	border: 2px solid #1bec08;
+  border: 2px solid #1bec08;
 }
+
 .shopping {
-	border: 2px solid #9415dd;
+  border: 2px solid #9415dd;
 }
+
 .food {
-	border: 2px solid #ff4646;
+  border: 2px solid #ff4646;
 }
+
 .cash {
-	border: 2px solid #2d87ed;
+  border: 2px solid #2d87ed;
 }
+
 .fuel {
-	border: 2px solid #ff8800;
+  border: 2px solid #ff8800;
 }

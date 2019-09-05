@@ -13,6 +13,14 @@ export class ExpenseService {
     return this.http.get<Expense[]>(this.expensesApiUrl);
   }
 
+  addExpense(expense: Expense) {
+    return this.http.post(this.expensesApiUrl, expense);
+  }
+
+  updateExpense(expense: Expense) {
+    return this.http.put(`${this.expensesApiUrl}/${expense._id}`, expense);
+  }
+
   deleteExpense(expense: Expense) {
     return this.http.delete(`${this.expensesApiUrl}/${expense._id}`);
   }

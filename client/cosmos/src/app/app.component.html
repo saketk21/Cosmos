@@ -1,30 +1,30 @@
 <mat-toolbar color="primary" class="navbar" [class.mat-elevation-z1]="true">
-	<mat-toolbar-row>
-		<button mat-icon-button (click)="sidenav.toggle()">
-			<mat-icon>menu</mat-icon>
-		</button>
-		<a class="brand toolbar-nav-link" routerLink="/"><img src="../assets/logo_without_lettering.png" alt="Logo"
-				height="36rem">
-			{{title}}
-		</a>
-		<div class="nav-links">
-			<a routerLink="/" class="toolbar-nav-link">Home</a>
-			<a routerLink="/about" class="toolbar-nav-link">About Us</a>
-		</div>
-	</mat-toolbar-row>
+  <mat-toolbar-row>
+    <button mat-icon-button (click)="sidenav.toggle()">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <a class="brand toolbar-nav-link" routerLink="/"><img src="../assets/logo_without_lettering.png" alt="Logo"
+        height="36rem">
+      {{title}}
+    </a>
+    <div class="nav-links">
+      <a routerLink="/" class="toolbar-nav-link">Home</a>
+      <a routerLink="/about" class="toolbar-nav-link">About Us</a>
+    </div>
+  </mat-toolbar-row>
 </mat-toolbar>
 
 <mat-sidenav-container>
-	<mat-sidenav #sidenav mode="side" [class.mat-elevation-z3]="true" opened>
-		<mat-nav-list>
-			<a mat-list-item color="accent" routerLink="/expenses">Manage Expenses</a>
-			<a mat-list-item routerLink="/analyze">Analyze Expenses</a>
-		</mat-nav-list>
-		<!-- <button mat-raised-button>Manage Expenses</button>
+  <mat-sidenav #sidenav mode="side" [class.mat-elevation-z3]="true" opened>
+    <mat-nav-list>
+      <a mat-list-item color="accent" routerLink="/expenses">Manage Expenses</a>
+      <a mat-list-item routerLink="/analyze">Analyze Expenses</a>
+    </mat-nav-list>
+    <!-- <button mat-raised-button>Manage Expenses</button>
 		<button mat-raised-button>Analyze Expenses</button> -->
-	</mat-sidenav>
-	<mat-sidenav-content>
-		<router-outlet></router-outlet>
-		<div style="height: 10rem"></div>
-	</mat-sidenav-content>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <router-outlet></router-outlet>
+    <div style="height: 10rem"></div>
+  </mat-sidenav-content>
 </mat-sidenav-container>

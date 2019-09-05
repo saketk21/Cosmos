@@ -1,4 +1,31 @@
 mat-card {
-	margin-bottom: 5px;
-	border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+mat-card-actions {
+  text-align: right;
+}
+
+mat-card-title {
+  display: flex;
+  justify-content: space-between;
+}
+
+mat-card-title .expense-actions {
+  margin-right: 2rem;
+}
+
+.expense-list {
+  margin-left: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.add-expense {
+  position: fixed;
+  margin-bottom: 1rem;
+  margin-right: 2rem;
+  align-self: flex-end;
+  padding-right: 2rem;
+  bottom: 10%;
 }

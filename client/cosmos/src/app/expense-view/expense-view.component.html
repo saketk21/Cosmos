@@ -1,20 +1,32 @@
-<h2 class="mat-display-1">All Expenses</h2>
+<div class="expense-list">
+  <h2 class="mat-display-1">All Expenses</h2>
 
-<mat-card *ngFor="let expense of expenses" [class.food]="expense.category.toUpperCase() === 'FOOD'"
-  [class.bills]="expense.category.toUpperCase() === 'BILLS'"
-  [class.shopping]="expense.category.toUpperCase() === 'SHOPPING'"
-  [class.fuel]="expense.category.toUpperCase() === 'FUEL'" [class.cash]="expense.category.toUpperCase() === 'CASH'">
-  <mat-card-title>{{expense.title}}</mat-card-title>
-  <mat-card-content>
-    <p>{{expense.amount | currency: 'INR': true }}</p>
-    <p>Category: {{expense.category}}</p>
-  </mat-card-content>
-  <mat-card-actions style="text-align: right">
-    <button mat-icon-button>
-      <mat-icon>edit</mat-icon>
+  <mat-card *ngFor="let expense of expenses" [class.food]="expense.category.toUpperCase() === 'FOOD'"
+    [class.bills]="expense.category.toUpperCase() === 'BILLS'"
+    [class.shopping]="expense.category.toUpperCase() === 'SHOPPING'"
+    [class.fuel]="expense.category.toUpperCase() === 'FUEL'" [class.cash]="expense.category.toUpperCase() === 'CASH'"
+    [class.mat-elevation-z8]="true">
+    <mat-card-title>
+      {{expense.title}}
+      <div class="expense-actions">
+        <button mat-icon-button (click)="openDialog(expense)" matTooltip="Edit Expense" matTooltipShowDelay="1000">
+          <mat-icon>edit</mat-icon>
+        </button>
+        <button mat-icon-button (click)="deleteExpense(expense)" matTooltip="Delete Expense" matTooltipShowDelay="1000">
+          <mat-icon>delete</mat-icon>
+        </button>
+      </div>
+    </mat-card-title>
+    <mat-card-content>
+      <p>{{expense.amount | currency: 'INR': 'symbol' }}</p>
+      <p>Category: {{expense.category}}</p>
+    </mat-card-content>
+  </mat-card>
+
+  <div class="add-expense">
+    <button mat-fab color="accent" (click)="openDialog()" [class.mat-elevation-z1]="true" matTooltip="Add New Expense"
+      matTooltipShowDelay="1000">
+      <mat-icon>add</mat-icon>
     </button>
-    <button mat-icon-button (click)="deleteExpense(expense)">
-      <mat-icon>delete</mat-icon>
-    </button>
-  </mat-card-actions>
-</mat-card>
+  </div>
+</div>

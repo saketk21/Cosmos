@@ -1,0 +1,10 @@
+.form-container {
+  display: flex;
+  flex-direction: column;
+  width: 40rem;
+  margin-bottom: 2rem;
+}
+
+mat-dialog>* {
+  width: 100%;
+}

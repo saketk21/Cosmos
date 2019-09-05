@@ -11,13 +11,17 @@ import { FormsModule } from '@angular/forms';
 import { ExpenseViewComponent } from './expense-view/expense-view.component';
 import { ExpenseService } from './expense.service';
 import { HttpClientModule } from '@angular/common/http';
+import { ExpenseFormDialogComponent } from './expense-form-dialog/expense-form-dialog.component';
+import { ExpenseAnalyzeComponent } from './expense-analyze/expense-analyze.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LandingComponent,
     AboutComponent,
-    ExpenseViewComponent
+    ExpenseViewComponent,
+    ExpenseFormDialogComponent,
+    ExpenseAnalyzeComponent
   ],
   imports: [
     BrowserModule,
@@ -30,6 +34,7 @@ import { HttpClientModule } from '@angular/common/http';
   providers: [
     ExpenseService
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [ExpenseFormDialogComponent]
 })
 export class AppModule { }
