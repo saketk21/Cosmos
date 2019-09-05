@@ -9,13 +9,13 @@
     </a>
     <div class="nav-links">
       <a routerLink="/" class="toolbar-nav-link">Home</a>
-      <a routerLink="/about" class="toolbar-nav-link">About Us</a>
+      <a routerLink="/about" class="toolbar-nav-link">About</a>
     </div>
   </mat-toolbar-row>
 </mat-toolbar>
 
 <mat-sidenav-container>
-  <mat-sidenav #sidenav mode="side" [class.mat-elevation-z3]="true" opened>
+  <mat-sidenav #sidenav mode="side" [class.mat-elevation-z3]="true">
     <mat-nav-list>
       <a mat-list-item color="accent" routerLink="/expenses">Manage Expenses</a>
       <a mat-list-item routerLink="/analyze">Analyze Expenses</a>

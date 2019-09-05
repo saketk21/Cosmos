@@ -1,0 +1,11 @@
+mat-card-content {
+	display: flex;
+}
+.text-container {
+	margin-right: 10rem;
+}
+
+code {
+	background: whitesmoke;
+	color: lightcoral;
+}

@@ -22,7 +22,7 @@ export class ExpenseAnalyzeComponent implements OnInit {
   public pieChartLegend = true;
   public pieChartColors = [
     {
-      backgroundColor: ['#1bec0866', '#2d87ed66', '#ff464666', '#9415dd66', '#ff880066'],
+      backgroundColor: ['#1bec0866', '#2d87ed66', '#ff464666', '#9415dd66', '#ffd90066'],
     },
   ];
 
@@ -58,22 +58,17 @@ export class ExpenseAnalyzeComponent implements OnInit {
           }
           pieChartAggregatedData[category] += expense.amount;
         });
-        console.log('Aggregated Data:', pieChartAggregatedData);
         this.pieChartData = pieChartAggregatedData;
       });
   }
   // events
   public chartClicked({ event, active }: { event: MouseEvent, active: any[] }): void {
-    console.log(event, active);
     const clickedSliceLabel = active[0]._chart.config.data.labels[active[0]._index];
     this.expenseService.getExpensesByCategory(clickedSliceLabel)
       .subscribe(expenses => {
         this.expensesOfClickedCategory = expenses;
-        console.log(this.expensesOfClickedCategory);
       });
   }
 
-  public chartHovered({ event, active }: { event: MouseEvent, active: any[] }): void {
-    console.log(event, active);
-  }
+  public chartHovered({ event, active }: { event: MouseEvent, active: any[] }): void { }
 }
