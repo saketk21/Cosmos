@@ -13,6 +13,10 @@ export class ExpenseService {
     return this.http.get<Expense[]>(this.expensesApiUrl);
   }
 
+  getExpensesByCategory(clickedSliceLabel: string) {
+    return this.http.get<Expense[]>(`${this.expensesApiUrl}?category=${clickedSliceLabel}`);
+  }
+
   addExpense(expense: Expense) {
     return this.http.post(this.expensesApiUrl, expense);
   }

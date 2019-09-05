@@ -23,7 +23,7 @@
     </mat-card-content>
   </mat-card>
 
-  <div class="add-expense">
+  <div class="add-expense" *ngIf="!isCategoryView">
     <button mat-fab color="accent" (click)="openDialog()" [class.mat-elevation-z1]="true" matTooltip="Add New Expense"
       matTooltipShowDelay="1000">
       <mat-icon>add</mat-icon>

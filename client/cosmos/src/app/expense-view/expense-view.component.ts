@@ -1,7 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Expense } from '../models/expense.model';
 import { ExpenseService } from '../expense.service';
-import { categories } from '../models/categories.model';
 import { MatDialog, MatDialogConfig } from '@angular/material';
 import { ExpenseFormDialogComponent } from '../expense-form-dialog/expense-form-dialog.component';
 
@@ -11,14 +10,16 @@ import { ExpenseFormDialogComponent } from '../expense-form-dialog/expense-form-
   styleUrls: ['./expense-view.component.css']
 })
 export class ExpenseViewComponent implements OnInit {
-  expenses: Expense[];
-  constructor(
-    private dialog: MatDialog,
-    private expenseService: ExpenseService
-  ) { }
+  @Input() expenses?: Expense[];
+  isCategoryView = false;
+  constructor(private dialog: MatDialog, private expenseService: ExpenseService) { }
 
   ngOnInit() {
-    this.getExpenses();
+    if (!this.expenses) {
+      this.getExpenses();
+    } else {
+      this.isCategoryView = true;
+    }
   }
 
   getExpenses() {
@@ -56,8 +57,7 @@ export class ExpenseViewComponent implements OnInit {
         if (expense) {
           if (expense._id) {
             this.updateExpense(expense);
-          }
-          else {
+          } else {
             this.addExpense(expense);
           }
         }
